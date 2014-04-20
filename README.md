@@ -31,6 +31,20 @@
 
 * `saveFolder`：  下载图片保存的路径，可以填绝对或相对路径
 * `maxRetryTime`：下载失败重试次数
+* `fetchUrl`:抓取网页的类型，列表  
+说明             |   地址
+----------------|---------------------------------
+每日             |  http://www.pixiv.net/ranking.php?format=json&mode=daily&p=1
+每日r18          |  http://www.pixiv.net/ranking.php?format=json&mode=daily_r18&p=1
+每日r18g         |  http://www.pixiv.net/ranking.php?format=json&mode=daily_r18g&p=1
+每周             |  http://www.pixiv.net/ranking.php?format=json&mode=weekly&p=1
+每周r18          |  http://www.pixiv.net/ranking.php?format=json&mode=weekly_r18&p=1
+每日 r18g        |  http://www.pixiv.net/ranking.php?format=json&mode=weekly_r18g&p=1
+男性             |  http://www.pixiv.net/ranking.php?format=json&mode=male&p=1
+女性             |  http://www.pixiv.net/ranking.php?format=json&mode=female&p=1
+
+反正就这几个参数，自己拼下  
+
 
 ###图片保存目录说明
 
@@ -40,7 +54,25 @@
 ###日志说明
 以`yyyy-MM-dd.log`形式保存在`log`目录，json格式
 
-###其他
+###设置定时任务  
+#### windows下设置定时执行的方法   
 
-推荐设置定时任务每天执行，手动执行的话也比较麻烦
+#####1.控制面板找到计划任务，点击创建任务  
+![](http://imgsrc.baidu.com/forum/pic/item/06b921381f30e9242db7d2ab4e086e061c95f74e.jpg)  
+
+#####2.按图示设置如下
+![](http://imgsrc.baidu.com/forum/pic/item/29891630e924b8993f2f37a26c061d950b7bf64e.jpg)  
+######新建触发器，图示为每隔20分执行一次，因为只有首次下载比较耗费网速，所以时间间隔任意
+![](http://imgsrc.baidu.com/forum/pic/item/93e9d809b3de9c82ce14b1156e81800a18d84363.png)  
+
+######启动程序填最新版本的run.vbe所在路径（需和app.js同路径）  
+这个是后台静默运行run.bat，不会打开命令行窗口的，下载目录可以在run.bat设置
+![](http://imgsrc.baidu.com/forum/pic/item/8ba26a2762d0f7033400dd460afa513d2797c52f.png)
+  
+######条件选任何连接
+![](http://imgsrc.baidu.com/forum/pic/item/b928a0014c086e0684bb71d100087bf40bd1cb4e.jpg)  
+
+####linux下设置定时任务  
+`crontab -e`
+具体百度，很简单
 

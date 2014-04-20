@@ -32,6 +32,7 @@
 * `saveFolder`：  下载图片保存的路径，可以填绝对或相对路径
 * `maxRetryTime`：下载失败重试次数
 * `fetchUrl`:抓取网页的类型，列表  
+
 说明             |   地址
 ----------------|---------------------------------
 每日             |  http://www.pixiv.net/ranking.php?format=json&mode=daily&p=1
